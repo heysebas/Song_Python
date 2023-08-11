@@ -19,21 +19,36 @@ Just say the word and I will disappear
 Into the wilderness'''
 
 
-# Definir las palabras antigua y nueva
-palabra_antigua = 'voices'
-palabra_nueva = 'sounds'
+# =============================================================================
+# # Definir las palabras antigua y nueva
+# palabra_antigua = 'voices'
+# palabra_nueva = 'sounds'
+# 
+# 
+# # Dividir la cadena en una lista de palabras
+# palabras = song.split()
+# 
+# # Recorrer la lista de palabras y reemplazar la palabra antigua por la nueva
+# palabras_modificadas = [palabra_nueva if palabra == palabra_antigua else palabra for palabra in palabras]
+# 
+# # Unir las palabras modificadas para formar la cadena final
+# song_modificada = " ".join(palabras_modificadas)
+# 
+# # Imprimir la cadena original y la cadena modificada
+# print('Canción original:', song)
+# print('Canción modificada:', song_modificada)
+# =============================================================================
 
 
-# Dividir la cadena en una lista de palabras
-palabras = song.split()
+# Encuentra la posición del texto 'voices' en la cadena 'song'
+inicio_voces = song.find('voices')
 
-# Recorrer la lista de palabras y reemplazar la palabra antigua por la nueva
-palabras_modificadas = [palabra_nueva if palabra == palabra_antigua else palabra for palabra in palabras]
+# Crea una nueva cadena llamada 'song_modificada' que combina tres partes:
+# 1. El contenido de 'song' desde el inicio hasta la posición de 'voices'
+# 2. La palabra 'sounds'
+# 3. El contenido de 'song' desde después de 'voices' hasta el final
+song_modificada = song[:inicio_voces] + 'sounds' + song[inicio_voces + 6:]
 
-# Unir las palabras modificadas para formar la cadena final
-song_modificada = " ".join(palabras_modificadas)
-
-# Imprimir la cadena original y la cadena modificada
+# Imprime la canción original y la canción modificada
 print('Canción original:', song)
 print('Canción modificada:', song_modificada)
-
